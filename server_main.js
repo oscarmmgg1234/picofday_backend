@@ -1,14 +1,9 @@
 const express = require('express');
-const { status } = require('express/lib/response');
 const { listen_port } = require('./utils');
-const { db } = require('./mysql_driver')
 const {Server} = require('./server')
 var bodyParser = require('body-parser');
-var moment = require('moment');
 const res = require('express/lib/response');
-const { json } = require('body-parser');
 
-const DB = new db();
 const server = new Server()
 const api = express();
 
