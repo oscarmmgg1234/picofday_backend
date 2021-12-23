@@ -19,12 +19,12 @@ api.listen(listen_port, ()=>{});
 // app
 server.run()
 
-api.post("/upload-image", (request, response)=>{
+api.post("/uploadImage", (request, response)=>{
     DB.uploadImage(request.body)
     response(response.status)
 })
 
-api.get("/fetch-image", (request, response)=>{
+api.get("/fetchImage", (request, response)=>{
     response.setHeader("ContentType", "application/json");
     //server.getPickOfDayObj((image)=>response.send(image)) 
     response.send("oscar")
