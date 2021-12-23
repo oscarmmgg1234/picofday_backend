@@ -16,12 +16,13 @@ api.use(bodyParser)
 api.use(bodyParser.json())
 api.use(bodyParser.urlencoded({extended: true}));
 
+//server and api init
 server.connect();
 api.listen(listen_port, ()=>{});
 
-server.run()
-// app
 
+// app
+server.run()
 
 api.post("/upload-image", (request, response)=>{
     DB.uploadImage(request.body)
