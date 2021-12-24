@@ -8,7 +8,7 @@ class Server extends db{
     }
     run(){
         var RandomIndex;
-        this.fetchImage({index: 0}, (result)=>{this.imageObj = result})
+        this.fetchImage({index: 1}, (result)=>{this.imageObj = result})
         var mainLoop = setInterval(()=>{
             this.num_of_elements_db((res)=>{RandomIndex = getRandomInt(res+1)})
             setTimeout(()=>{
