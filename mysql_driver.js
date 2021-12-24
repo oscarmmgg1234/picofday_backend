@@ -1,5 +1,4 @@
 
-const { json } = require('body-parser');
 var mysql = require('mysql');
 const {v4: uuidv4} = require('uuid');
 
@@ -20,7 +19,7 @@ class db{
     }
     
     uploadImage(JSONObject){
-        this.db.query('INSERT INTO picofdayDB.ImageData (index, id, author, date, description, image)'
+        this.db.query('INSERT INTO picofdayDB.ImageData (ind, id, author, date, description, image)'
         + 'VALUES (?,?,?,?,?,?)', ["null",uuidv4(),JSONObject.author,"now()",JSONObject.descriptio,JSONObject.image],
         (error)=>{if(error != null){console.log(error.code)}})//end of query
     }
@@ -33,7 +32,7 @@ class db{
     num_of_elements_db(callback){
         this.db.query('SELECT COUNT(id) FROM picofdayDB.ImageData', 
         (err, result)=>{if(err != null){throw err} else {
-            var resultObj = Object.values(JSON.parse(JSON.stringify(result[0])))
+            var resultObj = JSON.parse(JSON.stringify(result[0]))
             return callback(resultObj[0])}})
     
     }
