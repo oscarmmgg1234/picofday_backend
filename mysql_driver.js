@@ -27,7 +27,7 @@ class db{
         let sqlQuery = 'SELECT * FROM picofdayDB.ImageData WHERE ind=' + JSONObject.index;
         this.db.query(sqlQuery, (error, results) => { if (error != null){throw error}
             else { 
-                
+               
                 return callback(JSON.stringify(results[0]))} })
     }
     num_of_elements_db(callback){
