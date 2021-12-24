@@ -15,7 +15,7 @@ api.listen(listen_port, ()=>{console.log("server init succeeded: listening on po
 server.run()
 
 api.post('/uploadImage', (req, res)=>{
-    DB.uploadImage(req.body);
+    server.uploadImage(req.body);
     res(res.status);
 })
 
