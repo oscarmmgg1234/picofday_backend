@@ -20,7 +20,7 @@ class db{
     
     uploadImage(JSONObject){
         this.db.query('INSERT INTO picofdayDB.ImageData (ind, id, author, date, description, image)'
-        + 'VALUES (?,?,?,?,?,?)', ["null",uuidv4(),JSONObject.author,"now()",JSONObject.description,JSONObject.image],
+        + 'VALUES (?,?,?,?,?,?)', ["null",uuidv4(),JSONObject.author,"NOW()",JSONObject.description,JSONObject.image],
         (error)=>{if(error != null){console.log(error.code)}})//end of query
     }
     fetchImage(JSONObject, callback){
