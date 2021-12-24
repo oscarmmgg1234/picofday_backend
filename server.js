@@ -1,9 +1,7 @@
-const { RANDOM } = require("mysql/lib/PoolSelector");
 const {db} = require("./mysql_driver");
 const {getRandomInt} = require("./utils")
 
 class Server extends db{
-    
     constructor(){
         super();        
         this.imageObj;
@@ -20,7 +18,7 @@ class Server extends db{
           
     }
     getPickOfDayObj(callback){
-        setTimeout(()=>{return callback(this.imageObj)}, 2000)
+        return this.imageObj;
     }
 
 }
