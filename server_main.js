@@ -9,7 +9,7 @@ const api = express();
 
 //app and api config
 server.connect();
-app.use(express.limit('20mb'));
+api.use(express.limit('20mb'));
 api.use(express.json())
 api.listen(listen_port, ()=>{console.log("server init succeeded: listening on port: " + listen_port);});
 
