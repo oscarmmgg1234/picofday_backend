@@ -21,6 +21,7 @@ api.post('/uploadImage', (req, res)=>{
 })
 
 api.get('/fetchImage', (req, res)=>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("ContentType", "application/json");
     res.send(server.getPickOfDayObj()); 
 })
