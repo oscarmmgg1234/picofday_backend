@@ -14,7 +14,7 @@ class Server extends db{
             setTimeout(()=>{
                 this.fetchImage({index: RandomIndex}, (result)=>{this.imageObj = result})
             }, 2000)
-        }, 86400000)//24hrs
+        }, 2000)//24hrs = 86400000ms
           
     }
     getPickOfDayObj(){
