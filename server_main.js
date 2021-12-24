@@ -20,8 +20,8 @@ api.post('/uploadImage', (req, res)=>{
 })
 
 api.get('/fetchImage', (req, res)=>{
-    response.setHeader("ContentType", "application/json");
-    server.getPickOfDayObj((image)=>response.send(image)); 
+    res.setHeader("ContentType", "application/json");
+    server.getPickOfDayObj((image)=>res.send(image)); 
 })
 
 
