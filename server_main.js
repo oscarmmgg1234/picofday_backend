@@ -13,7 +13,7 @@ api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({extended: true}));
 
 server.connect();
-api.listen(listen_port, ()=>{});
+api.listen(listen_port, ()=>{console.log("server init succeeded: listening on port: " + listen_port);});
 
 // app
 server.run()
