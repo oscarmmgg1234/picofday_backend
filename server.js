@@ -4,7 +4,7 @@ const {getRandomInt} = require("./utils")
 class Server extends db{
     constructor(){
         super();        
-        this.imageObj = {data: "oscar}
+        this.imageObj = {data: "oscar"}
     }
     run(){
         var RandomIndex;
