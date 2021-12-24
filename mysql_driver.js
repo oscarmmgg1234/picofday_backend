@@ -27,12 +27,13 @@ class db{
         let sqlQuery = 'SELECT * FROM picofdayDB.ImageData WHERE ind=' + JSONObject.index;
         this.db.query(sqlQuery, (error, results) => { if (error != null){throw error}
             else { 
-                return callback(JSON.parse(JSON.stringify(results[0])))} })
+                JSON.parse('{data: null}')
+                return callback(JSON.stringify(results[0]))} })
     }
     num_of_elements_db(callback){
         this.db.query('SELECT COUNT(id) FROM picofdayDB.ImageData', 
         (err, result)=>{if(err != null){throw err} else {
-            var resultObj = JSON.parse(JSON.stringify(result[0]))
+            var resultObj = JSON.stringify(result[0])
             return callback(resultObj[0])}})
     
     }
