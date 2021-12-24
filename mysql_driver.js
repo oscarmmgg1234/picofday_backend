@@ -28,7 +28,6 @@ class db{
         this.db.query(sqlQuery, (err, result) => { if (err != null){throw err}
             else { 
                let obj = JSON.parse(JSON.stringify(result))
-               console.log(obj[0])
                 return callback(obj[0])} })
     }
     num_of_elements_db(callback){
