@@ -21,7 +21,7 @@ api.post('/uploadImage', (req, res)=>{
 
 api.get('/fetchImage', (req, res)=>{
     res.setHeader("ContentType", "application/json");
-    server.getPickOfDayObj((image)=>res.send(image)); 
+    res.send(server.getPickOfDayObj()); 
 })
 
 
