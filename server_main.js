@@ -12,11 +12,11 @@ api.use(bodyParser);
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({extended: true}));
 
-server.connect();
+//server.connect();
 api.listen(listen_port, ()=>{console.log("server init succeeded: listening on port: " + listen_port);});
 
 // app
-server.run()
+//server.run()
 
 api.post("/uploadImage", (request, response)=>{
     DB.uploadImage(request.body);
@@ -24,8 +24,9 @@ api.post("/uploadImage", (request, response)=>{
 })
 
 api.get("/fetchImage", (request, response)=>{
-    response.setHeader("ContentType", "application/json");
-    server.getPickOfDayObj((image)=>response.send(image)); 
+    //response.setHeader("ContentType", "application/json");
+    //server.getPickOfDayObj((image)=>response.send(image)); 
+    console.log("response");
 })
 
 
