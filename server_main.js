@@ -17,7 +17,7 @@ server.run()
 
 api.post('/uploadImage', (req, res)=>{
     server.uploadImage(req.body);
-    res(res.status);
+    res.send(res.status);
 })
 
 api.get('/fetchImage', (req, res)=>{
