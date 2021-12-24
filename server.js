@@ -10,7 +10,7 @@ class Server extends db{
         var RandomIndex;
         this.fetchImage({index: 0}, (result)=>{this.imageObj = result})
         var mainLoop = setInterval(()=>{
-            this.num_of_elements_db((res)=>{RandomIndex = getRandomInt(res)})
+            this.num_of_elements_db((res)=>{RandomIndex = getRandomInt(res + 1)})
             setTimeout(()=>{
                 this.fetchImage({index: RandomIndex}, (result)=>{this.imageObj = result})
             }, 2000)
