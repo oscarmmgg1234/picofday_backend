@@ -18,15 +18,15 @@ api.listen(listen_port, ()=>{console.log("server init succeeded: listening on po
 // app
 //server.run()
 
-api.post("/uploadImage", (request, response)=>{
-    DB.uploadImage(request.body);
-    response(response.status);
+api.post('/uploadImage', (req, res)=>{
+    DB.uploadImage(req.body);
+    res(res.status);
 })
 
-api.get("/fetchImage", (request, response)=>{
+api.get('/fetchImage', (req, res)=>{
     //response.setHeader("ContentType", "application/json");
     //server.getPickOfDayObj((image)=>response.send(image)); 
-    response.send("oscar")
+    res.send("oscar")
 })
 
 
