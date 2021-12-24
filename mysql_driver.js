@@ -28,7 +28,7 @@ class db{
         this.db.query(sqlQuery, (error, results) => { if (error != null){throw error}
             else { 
                 
-                return callback(JSON.parse(JSON.stringify(results[0])))} })
+                return callback(JSON.stringify(results[0]))} })
     }
     num_of_elements_db(callback){
         this.db.query('SELECT COUNT(id) FROM picofdayDB.ImageData', 
