@@ -8,11 +8,11 @@ class Server extends db{
     }
     run(){
         var RandomIndex;
-        this.fetchImage({index: 1}, (result)=>{this.imageObj = result})
+        this.fetchImage({index: 4}, (result)=>{this.imageObj = result})
         var mainLoop = setInterval(()=>{
             this.num_of_elements_db((res)=>{RandomIndex = getRandomInt(res+1)})
             setTimeout(()=>{
-                this.fetchImage({index: RandomIndex}, (result)=>{this.imageObj = result})
+                this.fetchImage({index: RandomIndex}, (result)=>{if(this.imageObj === null){return this.fetchImage({index: RandomIndex}, (result)=>{this.imageObj = result;})}else {this.imageObj = result}})
             }, 2000)
         }, 86400000)//24hrs = 86400000ms
           
