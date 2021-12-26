@@ -1,6 +1,7 @@
 const express = require('express');
 const { listen_port } = require('./utils');
 const {Server} = require('./server')
+const cache = require('./server-cache');
 
 
 //app and api init
@@ -20,7 +21,7 @@ api.post('/uploadImage', (req, res)=>{
     res.send(res.status);
 })
 
-api.get('/fetchImage', (req, res)=>{
+api.get('/fetchImage', cache(180), (req, res)=>{
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("ContentType", "application/json");
     res.send(server.getPickOfDayObj()); 
